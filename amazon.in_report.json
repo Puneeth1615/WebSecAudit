@@ -1,0 +1,172 @@
+{
+  "target_url": "https://www.amazon.in/",
+  "ip_address": "99.86.150.21",
+  "scan_timestamp": "2026-09-18 22:39:05",
+  "scan_duration_seconds": 5.38,
+  "score": 96.0,
+  "grade": "A+",
+  "grade_description": "Exceptional defensive hygiene with robust modern controls.",
+  "findings": [
+    {
+      "id": "HDR-RP-MISSING",
+      "title": "Missing Referrer-Policy Header",
+      "category": "HTTP Defensive Headers",
+      "severity": "LOW",
+      "cvss_score": 3.1,
+      "description": "The server does not specify a Referrer-Policy.",
+      "impact": "Sensitive URLs with session tokens, user IDs, or internal query parameters may leak in the Referer header to external third parties.",
+      "remediation": "Configure 'Referrer-Policy: strict-origin-when-cross-origin' or 'no-referrer'.",
+      "evidence": "Header 'Referrer-Policy' is absent.",
+      "compliance_tags": [
+        "OWASP A05:2021"
+      ]
+    },
+    {
+      "id": "LEAK-SERVER",
+      "title": "Web Server Version Banner Disclosure",
+      "category": "Tech Stack & Vulnerability Exposure",
+      "severity": "INFO",
+      "cvss_score": 0.0,
+      "description": "The server exposes internal technology metadata via 'server: Server'.",
+      "impact": "Facilitates targeted attacker reconnaissance and CVE matching.",
+      "remediation": "Mask or suppress the 'server' response header in your web server/application configuration.",
+      "evidence": "server: Server",
+      "compliance_tags": [
+        "OWASP A05:2021"
+      ]
+    },
+    {
+      "id": "EXP-ROBOTS-SENSITIVE-PATHS",
+      "title": "Sensitive Administrative Paths Disclosed in robots.txt",
+      "category": "Attack Surface & Information Disclosure",
+      "severity": "LOW",
+      "cvss_score": 3.3,
+      "description": "robots.txt discloses sensitive restricted directories: /exec/obidos/account-access-login, /exec/obidos/refer-a-friend-login",
+      "impact": "Aids attackers in reconnaissance by revealing confidential application endpoints.",
+      "remediation": "Do not rely on robots.txt for access control. Enforce proper authentication mechanisms.",
+      "evidence": "Disallowed paths: /exec/obidos/account-access-login, /exec/obidos/refer-a-friend-login",
+      "compliance_tags": [
+        "OWASP A05:2021"
+      ]
+    }
+  ],
+  "metadata": {
+    "hostname": "www.amazon.in",
+    "port": 443,
+    "scheme": "https",
+    "ip_address": "99.86.150.21",
+    "ssl": {
+      "ssl_enabled": true,
+      "tls_version": "TLSv1.3",
+      "cipher_suite": "TLS_AES_128_GCM_SHA256",
+      "cert_issuer": "CN=Amazon RSA 2048 M01,O=Amazon,C=US",
+      "cert_subject": "CN=www.amazon.in",
+      "cert_valid_from": "2026-01-19 00:00:00 UTC",
+      "cert_expiry": "2027-01-17 23:59:59 UTC",
+      "days_until_expiry": 121,
+      "key_type": "RSA",
+      "key_size": 2048,
+      "signature_algo": "sha256",
+      "san_list": [
+        "www.amazon.in",
+        "www.amazon.co.in",
+        "p-y3-www-amazon-in-kalias.amazon.in",
+        "origin-www.amazon.in",
+        "p-yo-www-amazon-in-kalias.amazon.in",
+        "amazon.in",
+        "amazon.co.in",
+        "p-nt-www-amazon-in-kalias.amazon.in"
+      ]
+    },
+    "http_status": 200,
+    "effective_url": "https://www.amazon.in/",
+    "headers": {
+      "status_code": 200,
+      "inspected_headers_count": 28,
+      "defensive_headers_present": [
+        "Strict-Transport-Security",
+        "Content-Security-Policy",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Permissions-Policy"
+      ],
+      "defensive_headers_missing": [
+        "Referrer-Policy"
+      ],
+      "raw_headers": {
+        "Content-Type": "text/html;charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Date": "Fri, 18 Sep 2026 17:09:00 GMT",
+        "edge-cache-control": "no-store,no-cache,stale-if-error=0,stale-while-revalidate=0",
+        "vary": "User-Agent,Accept-Encoding",
+        "server": "Server",
+        "accept-ch": "ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,sec-ch-ua-platform,sec-ch-ua-platform-version",
+        "accept-ch-lifetime": "86400",
+        "cache-control": "no-cache",
+        "content-encoding": "gzip",
+        "content-language": "en-IN",
+        "content-security-policy": "upgrade-insecure-requests;report-uri https://metrics.media-amazon.com/",
+        "expires": "-1",
+        "permissions-policy": "ch-dpr=(self \"https://m.media-amazon.com\" \"https://images-eu.ssl-images-amazon.com\"), ch-viewport-width=(self \"https://m.media-amazon.com\" \"https://images-eu.ssl-images-amazon.com\"), ch-downlink=(self \"https://m.media-amazon.com\" \"https://images-eu.ssl-images-amazon.com\"), ch-ect=(self \"https://m.media-amazon.com\" \"https://images-eu.ssl-images-amazon.com\")",
+        "pragma": "no-cache",
+        "x-content-type-options": "nosniff",
+        "x-ua-compatible": "IE=edge",
+        "x-xss-protection": "1;",
+        "content-security-policy-report-only": "default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/",
+        "x-amz-rid": "5RWZDGM9EENJMAZV9KWN",
+        "strict-transport-security": "max-age=47474747; includeSubDomains; preload",
+        "x-frame-options": "SAMEORIGIN",
+        "X-Cache": "Miss from cloudfront",
+        "Via": "1.1 d3f943c585dbc140703b80fb53f9b362.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "HYD57-P7",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "X-Amz-Cf-Id": "WGtWVH2DVN642OuyjBiCZfos5rw19y_CuYgK6FnibsR05iYGT3lYkQ=="
+      }
+    },
+    "cookies": {
+      "cookies_detected_count": 0,
+      "audited_cookies": []
+    },
+    "fingerprint": {
+      "server_banner": "Server",
+      "powered_by": "None",
+      "detected_technologies": [
+        {
+          "type": "Web Server",
+          "name": "Server"
+        }
+      ]
+    },
+    "surface": {
+      "discovered_endpoints": [
+        {
+          "path": "/robots.txt",
+          "status": 200,
+          "verified": true
+        }
+      ],
+      "has_security_txt": true
+    }
+  },
+  "bia": {
+    "confidentiality_risk": "Low",
+    "integrity_risk": "Low",
+    "availability_risk": "High",
+    "regulatory_exposure": {
+      "PCI-DSS 4.0": "COMPLIANT (Baseline controls satisfied)",
+      "HIPAA Security Rule": "ADEQUATE (Transmission standards met)",
+      "GDPR Art. 32": "COMPLIANT (Demonstrates reasonable technical hygiene)"
+    },
+    "financial_impact_rating": "Low - Standard security operational maintenance required",
+    "reputational_risk_rating": "Low - Posture adheres to modern industry baseline standards",
+    "executive_summary": "The security posture assessment for 'https://www.amazon.in/' yielded an overall score of 96.0/100 (Grade: A+). The audit identified 0 Critical, 0 High, 0 Medium, and 2 Low severity findings. The target displays solid baseline defensive controls. Addressing minor header omissions and maintaining regular patch management will uphold defense-in-depth posture."
+  },
+  "severity_breakdown": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 2,
+    "INFO": 1
+  }
+}

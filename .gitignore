@@ -1,0 +1,20 @@
+# Ignore PPT files & assets
+build_arch.py
+build_ppt.py
+clean_backgrounds.py
+generate_arch_diagrams.py
+test_tight_cards.py
+WebSecAudit_Capstone_ppt.pptx
+WebSecAudit_Capstone_v3.pptx
+
+# Ignore extra scan reports
+veltech.edu.in_report.json
+veltech.edu.in_report.pdf
+google.com_report.json
+google.com_report.pdf
+
+
+
+# Python cache
+__pycache__/
+*.pyc
