@@ -183,15 +183,3 @@ python -m unittest discover tests
 
 ---
 
-## Capstone & Resume Highlighting
-
-### Suggested Resume Bullet Points:
-> **WebSecAudit – Open-Source Web Vulnerability & Security Posture Scanner (Python)**
-> - Engineered a modular Python security auditing engine benchmarked against Qualys SSL Labs and Qualys WAS, auditing TLS cipher suites, certificate chains, and HTTP defensive headers (HSTS, CSP, X-Frame-Options).
-> - Implemented concurrent attack surface discovery and automated CVE correlation via Google's OSV.dev REST API and signature heuristics.
-> - Built an automated Business Impact Analysis (BIA) and CVSS 3.1 scoring model generating executive PDF reports and machine-readable JSON for CI/CD DevSecOps pipelines.
-
-### Key Interview Talking Points:
-1. **Socket-level TLS Handshake**: Explain how direct socket connections wrap TLS with Server Name Indication (SNI) and parse X.509 DER certificates using `cryptography` to evaluate key lengths, hashing algorithms, and SAN domain wildcards.
-2. **Business Impact Analysis (BIA)**: Explain why translating a technical finding (e.g., missing HSTS) into business consequences (e.g., PCI-DSS 4.0 Requirement 4.1 failure and SSL-stripping risk) is what differentiates an AppSec professional from a script-runner.
-3. **Safe & Non-Destructive Scanning**: Explain how bounded concurrent probing (`ThreadPoolExecutor`) prevents DoS conditions, and how verification logic (checking content patterns rather than just HTTP 200) eliminates false-positives on custom 404 error pages.
